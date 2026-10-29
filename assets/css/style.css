@@ -298,9 +298,9 @@ strong { font-weight: 700; color: var(--color-ink); }
   animation: markDotPulse 3.4s ease-in-out infinite;
 }
 @media (max-width: 640px) {
-  .hero-mark { opacity: 0.5; right: -22%; }
-  .hero-mark .mark-a { font-size: 8rem; }
-  .hero-mark .mark-dot { width: 12px; height: 12px; margin-bottom: 10px; }
+  .hero-mark { top: 42%; right: -10%; }
+  .hero-mark .mark-a { font-size: clamp(10rem, 58vw, 18rem); }
+  .hero-mark .mark-dot { width: 18px; height: 18px; margin-bottom: 14px; }
 }
 
 /* ---------- Cards ---------- */
@@ -476,6 +476,44 @@ table.compare tr:last-child td, table.compare tr:last-child th { border-bottom: 
 }
 @media (max-width: 860px) { .flat-ref-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 560px) { .flat-ref-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.stat-highlight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-accent-tint);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+.stat-figure {
+  flex-shrink: 0;
+  text-align: center;
+  padding-right: var(--space-5);
+  border-right: 1px solid var(--color-border);
+}
+.stat-number {
+  display: block;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-accent-soft);
+  line-height: 1;
+}
+.stat-label {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+}
+.stat-desc { font-size: 1rem; color: var(--color-ink-soft); line-height: 1.7; margin: 0; }
+.stat-desc strong { color: var(--color-accent-soft); }
+@media (max-width: 640px) {
+  .stat-highlight { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
+  .stat-figure { border-right: none; border-bottom: 1px solid var(--color-border); padding-right: 0; padding-bottom: var(--space-3); width: 100%; text-align: left; }
+}
 
 /* ---------- Industry reference cards (industry.html, text-only) ---------- */
 .ref-card {
@@ -710,6 +748,15 @@ table.compare tr:last-child td, table.compare tr:last-child th { border-bottom: 
 .category-item h4 { font-size: 1rem; margin-bottom: 0.3rem; }
 .category-item .num { color: var(--color-accent-soft); font-family: var(--font-en); font-weight: 700; }
 .category-item p { font-size: 0.875rem; color: var(--color-ink-soft); margin: 0; }
+.cat-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.cat-tags li {
+  font-size: 0.8125rem;
+  color: var(--color-ink-soft);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+}
 
 .imc-box {
   margin-top: var(--space-4);
