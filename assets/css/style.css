@@ -273,8 +273,21 @@ strong { font-weight: 700; color: var(--color-ink); }
   font-weight: 800;
   font-size: clamp(14rem, 32vw, 30rem);
   line-height: 0.8;
-  color: var(--color-surface);
   user-select: none;
+  background: linear-gradient(110deg, var(--color-surface) 35%, var(--color-accent-soft) 48%, var(--color-surface) 61%);
+  background-size: 320% 100%;
+  background-position: 180% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: var(--color-surface);
+  animation: markShimmer 7s ease-in-out infinite;
+}
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .hero-mark .mark-a { color: transparent; }
+}
+@keyframes markShimmer {
+  0%, 20% { background-position: 180% 0; }
+  70%, 100% { background-position: -60% 0; }
 }
 .hero-mark .mark-dot {
   width: clamp(18px, 2.2vw, 34px);
@@ -427,8 +440,16 @@ table.compare tr:last-child td, table.compare tr:last-child th { border-bottom: 
 /* ---------- Industry — flat text cards (home) ---------- */
 .flat-ref-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0.9rem;
+}
+.flat-ref-caption {
+  margin-top: 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
 }
 .flat-ref-card {
   display: block;
@@ -670,7 +691,7 @@ table.compare tr:last-child td, table.compare tr:last-child th { border-bottom: 
 .category-list { display: grid; gap: var(--space-2); margin: var(--space-4) 0; }
 .category-item {
   display: grid;
-  grid-template-columns: 2fr 3fr 2fr;
+  grid-template-columns: 1fr 2.3fr;
   gap: var(--space-3);
   padding: var(--space-3);
   background: var(--color-surface);
@@ -681,9 +702,6 @@ table.compare tr:last-child td, table.compare tr:last-child th { border-bottom: 
 .category-item h4 { font-size: 1rem; margin-bottom: 0.3rem; }
 .category-item .num { color: var(--color-accent-soft); font-family: var(--font-en); font-weight: 700; }
 .category-item p { font-size: 0.875rem; color: var(--color-ink-soft); margin: 0; }
-.category-item .refs { font-size: 0.8125rem; color: var(--color-ink-faint); }
-.category-item .refs a { color: var(--color-accent-soft); }
-.category-item .refs a:hover { text-decoration: underline; }
 
 .imc-box {
   margin-top: var(--space-4);
@@ -693,7 +711,16 @@ table.compare tr:last-child td, table.compare tr:last-child th { border-bottom: 
   padding: var(--space-4);
 }
 .imc-box h4 { margin-bottom: 0.5rem; }
-.imc-box p { color: rgba(255,255,255,0.82); margin: 0; font-size: 0.9375rem; }
+.imc-box p { color: rgba(255,255,255,0.82); margin: 0 0 var(--space-2); font-size: 0.9375rem; }
+.imc-example {
+  display: inline-block;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.9rem;
+  font-size: 0.875rem;
+  color: #fff;
+}
 
 .curriculum {
   margin-top: var(--space-3);
