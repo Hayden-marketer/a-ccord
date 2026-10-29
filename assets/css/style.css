@@ -744,6 +744,85 @@ table.compare tr:last-child td, table.compare tr:last-child th { border-bottom: 
 .cost-box .title { font-weight: 700; margin-bottom: 0.5rem; display: block; }
 .cost-box li { font-size: 0.875rem; color: var(--color-ink-soft); padding: 0.2rem 0; }
 
+.tier-list {
+  margin: var(--space-3) 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-surface);
+  max-width: 480px;
+}
+.tier-list li { padding: 0.9rem 1.1rem; border-bottom: 1px solid var(--color-border); }
+.tier-list li:last-child { border-bottom: none; }
+.tier-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.9375rem; }
+.tier-row .tier-label { font-weight: 700; color: var(--color-ink); }
+.tier-row .tier-price { color: var(--color-accent-soft); font-weight: 600; }
+.tier-note { margin-top: 0.25rem; font-size: 0.8125rem; color: var(--color-ink-faint); }
+
+/* ---------- Inquiry modal ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 200;
+}
+.modal-overlay[hidden] { display: none; }
+.modal-box {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  max-width: 420px;
+  width: 100%;
+  position: relative;
+  box-shadow: var(--shadow-md);
+}
+.modal-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  border: none;
+  color: var(--color-ink-soft);
+  font-size: 1.25rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-close:hover { background: var(--color-border); color: var(--color-ink); }
+.modal-box h3 { font-size: 1.25rem; margin-bottom: 0.6rem; padding-right: 2rem; }
+.modal-desc { font-size: 0.9375rem; color: var(--color-ink-soft); margin-bottom: var(--space-3); }
+.modal-template { margin: 0 0 var(--space-3); padding-left: 1.1rem; }
+.modal-template li { font-size: 0.8125rem; color: var(--color-ink-soft); padding: 0.15rem 0; }
+.modal-email {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  margin-bottom: var(--space-3);
+}
+.modal-email span { font-family: var(--font-en); font-size: 0.9375rem; color: var(--color-ink); }
+.modal-email button {
+  background: var(--color-accent-tint);
+  color: var(--color-accent-soft);
+  border: none;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+}
+.modal-email button:hover { background: var(--color-accent); color: #fff; }
+
 /* ---------- Industry page filter ---------- */
 .filter-tabs {
   display: flex;

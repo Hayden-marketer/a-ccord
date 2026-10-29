@@ -23,7 +23,7 @@
       <a href="service.html" class="active">Service</a>
       <a href="industry.html">Industry</a>
       <a href="index.html#contact">Contact</a>
-      <a class="nav-cta" href="mailto:strategy@lmtbkrs.com?subject=%5B%EC%97%90%EC%9D%B4%EC%BD%94%EB%93%9C%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%9D%98%5D">프로젝트 문의</a>
+      <button class="nav-cta" type="button" data-inquiry="project">프로젝트 문의</button>
     </nav>
     <button class="nav-toggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
   </div>
@@ -46,7 +46,7 @@
           <span class="tag en">01 — Agency</span>
           <h2>맡기기 · 프로젝트 대행</h2>
         </div>
-        <a class="btn btn-primary" href="mailto:strategy@lmtbkrs.com?subject=%5B%EC%97%90%EC%9D%B4%EC%BD%94%EB%93%9C%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%9D%98%5D">프로젝트 문의하기</a>
+        <button class="btn btn-primary" type="button" data-inquiry="project">프로젝트 문의하기</button>
       </div>
       <p>건 바이 건(프로젝트 단위)으로 진행하며, 갱신 의무가 없습니다. 아주 간단한 인터뷰(목표·예산·일정)를 토대로 빠르게 견적을 드립니다.</p>
       <p><strong>투입 인력</strong>은 의뢰 규모와 범위에 따라 유동적으로 구성합니다. 소규모 단건은 전담 1인, IMC·대형 캠페인은 PM과 분야별 담당자로 팀을 꾸립니다. 필요한 인원만 붙이기 때문에 불필요한 인건비가 견적에 포함되지 않습니다.</p>
@@ -115,10 +115,10 @@
           <span class="tag en">02 — Partner</span>
           <h2>함께하기 · 마케팅 PM 상주</h2>
         </div>
-        <a class="btn btn-primary" href="mailto:strategy@lmtbkrs.com?subject=%5B%EC%97%90%EC%9D%B4%EC%BD%94%EB%93%9C%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%9D%98%5D">상담 문의하기</a>
+        <button class="btn btn-primary" type="button" data-inquiry="project">상담 문의하기</button>
       </div>
       <p>마케팅 프로젝트 매니저 1인이 고객사를 전담하여 내부 팀처럼 일하는 형태입니다. 디자인부터 마케팅까지, 회사에 필요한 업무 전반을 함께 수행합니다.</p>
-      <p><strong>운영 방식</strong>은 매일 출근하는 형태가 아니라, 고객사 워킹타임 기준 상시 소통과 주요 미팅 참석을 기본으로 합니다.</p>
+      <p><strong>운영 방식</strong>은 매일 출근하는 형태가 아니라, 고객사 워킹타임 기준 상시 소통과 주요 미팅 참석을 기본으로 합니다.<br>대행사의 경우 클라이언트, 인하우스의 경우 대행사 직원과의 직접 소통을 포함합니다.</p>
 
       <div class="fit-grid">
         <div class="fit-box yes">
@@ -126,6 +126,7 @@
           <ul>
             <li>마케팅 담당자 채용이 부담스러운 곳</li>
             <li>단기간 특정 프로젝트에 전담 인력이 필요한 곳</li>
+            <li>특정 기간 마케팅과 관련된 다양한 서포트 업무를 전담할 담당자가 필요한 경우</li>
           </ul>
         </div>
         <div class="fit-box no">
@@ -138,8 +139,13 @@
       </div>
 
       <h3 style="margin:var(--space-5) 0 var(--space-1);font-size:1.25rem">가격</h3>
-      <p>월 60만 원부터 시작합니다 (업무 범위에 따라 상이). 브랜드 규모와 업무 범위에 맞춰 기본 운영비 + 성과 인센티브 + 실비로 구성됩니다.</p>
-      <p style="color:var(--color-ink-soft);font-size:0.9375rem">예시 — 운영 규모가 작은 브랜드는 월 60만~100만 원대, 오프라인 행사가 많은 달은 최대 350만 원까지 늘어나는 경우도 있습니다.</p>
+      <p>월 70만 원부터 시작합니다. 브랜드 규모와 업무 범위에 맞춰 기본 운영비 + 성과 인센티브 + 실비로 구성됩니다.</p>
+      <p style="color:var(--color-ink-soft);font-size:0.9375rem">메인 PM의 연차 및 프로젝트 복잡도·볼륨에 따라 견적이 상이합니다.</p>
+      <ul class="tier-list">
+        <li><div class="tier-row"><span class="tier-label">대표자</span><span class="tier-price en">월 120만 원~</span></div></li>
+        <li><div class="tier-row"><span class="tier-label">시니어</span><span class="tier-price en">월 90만 원~</span></div></li>
+        <li><div class="tier-row"><span class="tier-label">주니어</span><span class="tier-price en">월 70만 원~</span></div><div class="tier-note">주 20시간+a 공수 기준</div></li>
+      </ul>
 
       <div class="cost-compare">
         <div class="cost-box">
@@ -157,7 +163,7 @@
             <li>계약 즉시 투입</li>
             <li>4대보험·복리후생 부담 없음</li>
             <li>검증된 팀이 바로 실무 수행</li>
-            <li>월 60만 원부터, 채용 대비 합리적</li>
+            <li>월 70만 원부터, 채용 대비 합리적</li>
           </ul>
         </div>
       </div>
@@ -181,7 +187,7 @@
           <span class="tag en">03 — Academy</span>
           <h2>배우기 · 마케팅·AI 교육</h2>
         </div>
-        <a class="btn btn-primary" href="mailto:strategy@lmtbkrs.com?subject=%5B%EC%97%90%EC%9D%B4%EC%BD%94%EB%93%9C%20%EA%B5%90%EC%9C%A1%20%EB%AC%B8%EC%9D%98%5D">교육 문의하기</a>
+        <button class="btn btn-primary" type="button" data-inquiry="education">교육 문의하기</button>
       </div>
       <p>대행을 맡기는 대신, 직접 배워서 운영할 수 있도록 돕습니다. 1인 사업가·자영업 사장님을 위한 실전 교육과 일반인 대상 교육을 함께 운영합니다.</p>
       <p><strong>맞춤 커리큘럼</strong> — 수강자 상황(업종, 현재 운영 수준, 목표)에 맞춰 설계합니다.</p>
@@ -242,8 +248,8 @@
         <h2 class="en">필요한 것만, 합리적으로.</h2>
         <p>간단한 인터뷰부터 시작합니다. 부담 없이 문의해 주세요.</p>
         <div class="cta-row" style="justify-content:center">
-          <a class="btn btn-primary" href="mailto:strategy@lmtbkrs.com?subject=%5B%EC%97%90%EC%9D%B4%EC%BD%94%EB%93%9C%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%9D%98%5D">프로젝트 문의</a>
-          <a class="btn btn-secondary" style="border-color:#fff;color:#fff" href="mailto:strategy@lmtbkrs.com?subject=%5B%EC%97%90%EC%9D%B4%EC%BD%94%EB%93%9C%20%EA%B5%90%EC%9C%A1%20%EB%AC%B8%EC%9D%98%5D">교육 문의</a>
+          <button class="btn btn-primary" type="button" data-inquiry="project">프로젝트 문의</button>
+          <button class="btn btn-secondary" style="border-color:#fff;color:#fff" type="button" data-inquiry="education">교육 문의</button>
         </div>
       </div>
     </div>
@@ -268,6 +274,20 @@
     <div class="footer-bottom"><span class="en">Copyright © a-ccord. All rights reserved.</span></div>
   </div>
 </footer>
+
+<div class="modal-overlay" id="inquiry-modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" type="button" aria-label="닫기">&times;</button>
+    <h3 id="modal-title">프로젝트 문의</h3>
+    <p class="modal-desc" id="modal-desc"></p>
+    <ul class="modal-template" id="modal-template"></ul>
+    <div class="modal-email">
+      <span class="en">strategy@lmtbkrs.com</span>
+      <button data-copy-email="strategy@lmtbkrs.com">복사</button>
+    </div>
+    <a id="modal-mailto" class="btn btn-ghost btn-block" href="#" target="_blank" rel="noopener">메일 앱으로 작성하기</a>
+  </div>
+</div>
 
 <script src="assets/js/main.js"></script>
 </body>

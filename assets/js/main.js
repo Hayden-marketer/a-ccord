@@ -9,12 +9,63 @@ document.addEventListener('DOMContentLoaded', () => {
       navToggle.classList.toggle('open');
       navLinks.classList.toggle('mobile-open');
     });
-    navLinks.querySelectorAll('a').forEach((link) => {
+    navLinks.querySelectorAll('a, button').forEach((link) => {
       link.addEventListener('click', () => {
         navToggle.classList.remove('open');
         navLinks.classList.remove('mobile-open');
       });
     });
+  }
+
+  /* Inquiry modal (replaces mailto links on CTA buttons) */
+  const inquiryTemplates = {
+    project: {
+      title: '프로젝트 문의',
+      desc: '아래 이메일로 문의해 주세요. 다음 내용을 포함해 주시면 더 빠르게 답변드립니다.',
+      items: ['회사명', '업종', '관심 서비스 (맡기기·함께하기)', '예산', '희망 시기', '문의 내용'],
+      mailto: 'mailto:strategy@lmtbkrs.com?subject=%5B%EC%97%90%EC%9D%B4%EC%BD%94%EB%93%9C%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%9D%98%5D',
+    },
+    education: {
+      title: '교육 문의',
+      desc: '아래 이메일로 문의해 주세요. 다음 내용을 포함해 주시면 더 빠르게 답변드립니다.',
+      items: ['이름', '업종', '수강 인원', '관심 과정', '희망 일정'],
+      mailto: 'mailto:strategy@lmtbkrs.com?subject=%5B%EC%97%90%EC%9D%B4%EC%BD%94%EB%93%9C%20%EA%B5%90%EC%9C%A1%20%EB%AC%B8%EC%9D%98%5D',
+    },
+  };
+
+  const modal = document.getElementById('inquiry-modal');
+  if (modal) {
+    const titleEl = modal.querySelector('#modal-title');
+    const descEl = modal.querySelector('#modal-desc');
+    const listEl = modal.querySelector('#modal-template');
+    const mailtoEl = modal.querySelector('#modal-mailto');
+    const closeEl = modal.querySelector('.modal-close');
+    let lastFocused = null;
+
+    const onKeydown = (e) => { if (e.key === 'Escape') closeModal(); };
+
+    function openModal(type) {
+      const t = inquiryTemplates[type] || inquiryTemplates.project;
+      titleEl.textContent = t.title;
+      descEl.textContent = t.desc;
+      listEl.innerHTML = t.items.map((i) => `<li>${i}</li>`).join('');
+      mailtoEl.href = t.mailto;
+      lastFocused = document.activeElement;
+      modal.hidden = false;
+      closeEl.focus();
+      document.addEventListener('keydown', onKeydown);
+    }
+    function closeModal() {
+      modal.hidden = true;
+      document.removeEventListener('keydown', onKeydown);
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    }
+
+    document.querySelectorAll('[data-inquiry]').forEach((btn) => {
+      btn.addEventListener('click', () => openModal(btn.getAttribute('data-inquiry')));
+    });
+    closeEl.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
   }
 
   /* Scroll reveal */
