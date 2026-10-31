@@ -634,6 +634,12 @@ table.compare tr:last-child td, table.compare tr:last-child th { border-bottom: 
   font-weight: 600;
   color: var(--color-ink-soft);
 }
+.stat-footnote {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.6875rem;
+  color: var(--color-ink-faint);
+}
 .stat-desc { font-size: 0.9375rem; color: var(--color-ink-soft); line-height: 1.7; margin: 0; }
 .stat-desc strong { color: var(--color-accent-soft); }
 @media (max-width: 640px) {
@@ -690,6 +696,7 @@ table.compare tr:last-child td, table.compare tr:last-child th { border-bottom: 
 }
 .process-step h4 { font-size: 1rem; margin-bottom: 0.4rem; }
 .process-step p { font-size: 0.8125rem; color: var(--color-ink-soft); margin: 0; }
+.process-step p.small-note { font-size: 0.6875rem; color: var(--color-ink-faint); margin-top: 0.5rem; }
 .process-step:not(:first-child) { border-top: 2px solid var(--color-border); }
 
 /* ---------- Pricing table ---------- */
@@ -1060,8 +1067,10 @@ table.compare tr:last-child td, table.compare tr:last-child th { border-bottom: 
   .nav-links.mobile-open .nav-cta { align-self: flex-start; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .timeline { grid-template-columns: 1fr; }
-  .process-row { grid-template-columns: 1fr; }
-  .process-step:not(:first-child) { border-top: none; border-left: 2px solid var(--color-border); padding-left: var(--space-3); padding-top: 0; }
+  .process-row { grid-template-columns: repeat(2, 1fr); gap: var(--space-4) var(--space-3); }
+  .process-step { padding-top: var(--space-2); }
+  .process-step:not(:first-child) { border-top: none; }
+  .process-step:nth-child(n+3) { border-top: 2px solid var(--color-border); padding-top: var(--space-4); }
   .fit-grid { grid-template-columns: 1fr; }
   .category-item { grid-template-columns: 1fr; }
   .cost-compare { grid-template-columns: 1fr; }
@@ -1069,4 +1078,33 @@ table.compare tr:last-child td, table.compare tr:last-child th { border-bottom: 
   table.compare { min-width: 100%; }
   .compare-wrap { overflow-x: auto; }
   .cta-banner { padding: var(--space-5) var(--space-3); }
+}
+
+/* ---------- Back to top ---------- */
+.back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  font-size: 1.125rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), background 0.2s var(--ease);
+  z-index: 150;
+}
+.back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.back-to-top:hover { background: #3c6049; }
+@media (max-width: 640px) {
+  .back-to-top { right: 1rem; bottom: 1rem; width: 42px; height: 42px; }
 }

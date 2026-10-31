@@ -121,6 +121,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  /* Back to top */
+  const backToTop = document.getElementById('back-to-top');
+  if (backToTop) {
+    window.addEventListener(
+      'scroll',
+      () => {
+        backToTop.classList.toggle('visible', window.scrollY > 500);
+      },
+      { passive: true }
+    );
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   /* FAQ accordion */
   document.querySelectorAll('.faq-item').forEach((item) => {
     const btn = item.querySelector('.faq-q');
