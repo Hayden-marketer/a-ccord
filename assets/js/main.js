@@ -87,6 +87,40 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach((el) => el.classList.add('in'));
   }
 
+  /* Count-up numbers (e.g. stat-number) */
+  const countEls = document.querySelectorAll('[data-count-to]');
+  if (countEls.length) {
+    const animateCount = (el) => {
+      const target = parseInt(el.getAttribute('data-count-to'), 10) || 0;
+      const suffix = el.getAttribute('data-count-suffix') || '';
+      const duration = 1200;
+      const start = performance.now();
+      const tick = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    if ('IntersectionObserver' in window) {
+      const countIo = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCount(entry.target);
+              countIo.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.4 }
+      );
+      countEls.forEach((el) => countIo.observe(el));
+    } else {
+      countEls.forEach((el) => animateCount(el));
+    }
+  }
+
   /* FAQ accordion */
   document.querySelectorAll('.faq-item').forEach((item) => {
     const btn = item.querySelector('.faq-q');
@@ -135,10 +169,23 @@ document.addEventListener('DOMContentLoaded', () => {
         tab.classList.add('active');
         const target = tab.getAttribute('data-target');
         groups.forEach((group) => {
-          if (target === 'all' || group.getAttribute('data-category') === target) {
+          const show = target === 'all' || group.getAttribute('data-category') === target;
+          if (show) {
             group.style.display = '';
+            group.style.opacity = '0';
+            group.style.transform = 'translateY(8px)';
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                group.style.opacity = '1';
+                group.style.transform = 'translateY(0)';
+              });
+            });
           } else {
-            group.style.display = 'none';
+            group.style.opacity = '0';
+            group.style.transform = 'translateY(8px)';
+            setTimeout(() => {
+              if (group.style.opacity === '0') group.style.display = 'none';
+            }, 220);
           }
         });
       });
