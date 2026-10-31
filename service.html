@@ -19,14 +19,29 @@
 
 <header class="site-header">
   <div class="container nav-row">
-    <a href="index.html" class="nav-brand"><span class="logo"><span class="en">A</span><span class="dot" aria-hidden="true"></span><span class="en">ccord</span></span></a>
-    <nav class="nav-links">
-      <a href="service.html" class="active">Service</a>
-      <a href="industry.html">Industry</a>
-      <a href="index.html#contact">Contact</a>
-      <button class="nav-cta" type="button" data-inquiry="project">프로젝트 문의</button>
-    </nav>
-    <button class="nav-toggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+    <div class="nav-left">
+      <a href="index.html" class="nav-brand"><span class="logo"><span class="en">A</span><span class="dot" aria-hidden="true"></span><span class="en">ccord</span></span></a>
+      <button class="nav-inquiry-icon" type="button" data-inquiry="project" aria-label="문의하기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      </button>
+    </div>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <div class="nav-item">
+          <a href="service.html" class="active">Service</a>
+          <div class="nav-dropdown">
+            <a href="service.html#influencer-marketing">인플루언서 마케팅</a>
+            <a href="service.html#content-design">콘텐츠 제작</a>
+            <a href="service.html#event">이벤트 운영</a>
+            <a href="service.html#partner">단기 PM 채용</a>
+            <a href="service.html#academy">마케팅 교육</a>
+          </div>
+        </div>
+        <a href="industry.html">Industry</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
 
@@ -70,7 +85,6 @@
           <span class="tag en">01 — Agency</span>
           <h2>맡기기 · 프로젝트 대행</h2>
         </div>
-        <button class="btn btn-primary" type="button" data-inquiry="project">프로젝트 문의하기</button>
       </div>
       <div class="lede-stack">
         <p>개별 프로젝트 또는 캠페인 단위로 진행됩니다.</p>
@@ -81,7 +95,7 @@
       <h3 style="margin:var(--space-5) 0 var(--space-1);font-size:1.25rem">서비스 카테고리</h3>
       <div class="category-list reveal">
 
-        <div class="category-item">
+        <div class="category-item" id="influencer-marketing">
           <h4><span class="num en">01</span> Influencer Marketing</h4>
           <ul class="cat-tags">
             <li>인플루언서·유튜버 섭외 및 콘텐츠 운영</li>
@@ -110,7 +124,7 @@
           </ul>
         </div>
 
-        <div class="category-item">
+        <div class="category-item" id="event">
           <h4><span class="num en">04</span> Event</h4>
           <ul class="cat-tags">
             <li>온라인 이벤트 기획·운영</li>
@@ -119,7 +133,7 @@
           </ul>
         </div>
 
-        <div class="category-item">
+        <div class="category-item" id="content-design">
           <h4><span class="num en">05</span> Content &amp; Design</h4>
           <ul class="cat-tags">
             <li>상세페이지 기획·제작</li>
@@ -167,7 +181,6 @@
           <span class="tag en">02 — Partner</span>
           <h2>함께하기 · 마케팅 PM 상주</h2>
         </div>
-        <button class="btn btn-primary" type="button" data-inquiry="project">상담 문의하기</button>
       </div>
       <div class="lede-stack">
         <p>마케팅/사업기획 프로젝트 매니저 1인이 고객사를 전담하여 내부 팀원처럼 일하는 단기 계약직 형태입니다.<br>디자인부터 마케팅까지, 회사에 필요한 업무 전반을 함께 수행합니다.<br>팀에서 요구되는 역량에 따라 가장 적합한 매니저를 배정합니다.</p>
@@ -242,7 +255,6 @@
           <span class="tag en">03 — Academy</span>
           <h2>배우기 · 마케팅·AI 교육</h2>
         </div>
-        <button class="btn btn-primary" type="button" data-inquiry="education">교육 문의하기</button>
       </div>
       <div class="lede-stack">
         <p>1인 사업가·자영업 사장님을 위한 실전 교육과 일반인 대상 교육 프로그램입니다.<br>대행을 맡기는 대신 직접 배워서 운영할 수 있도록 돕는 과정입니다.</p>
