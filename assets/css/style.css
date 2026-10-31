@@ -836,7 +836,9 @@ table.compare tr:last-child td, table.compare tr:last-child th { border-bottom: 
   padding: var(--space-3);
   background: var(--color-surface);
 }
-.curriculum-course h4 { margin-bottom: 0.75rem; }
+.curriculum-course h4 { margin-bottom: 0.4rem; }
+.curriculum-course .course-sub { font-size: 0.8125rem; color: var(--color-accent-soft); margin: 0 0 0.75rem; }
+.small-note { font-size: 0.75rem; color: var(--color-ink-faint); margin: 0.4rem 0 0; }
 .curriculum-course ol { margin: 0; padding-left: 1.1rem; }
 .curriculum-course li { font-size: 0.8125rem; color: var(--color-ink-soft); padding: 0.3rem 0; }
 .curriculum-course li b { color: var(--color-ink); }
